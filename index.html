@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Associação Pestalozzi de Itaboraí</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-red: #e31f26;
+      --primary-yellow: #fbdb00;
+      --primary-black: #1f1a17;
+      --bg-light: #f8f9fa;
+      --white: #ffffff;
+      --text-dark: #1f1a17;
+      --text-muted: #6c757d;
+      --card-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      color: var(--text-dark);
+      background-color: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background: var(--primary-red);
+      color: var(--white);
+      border-radius: 50px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .btn:hover {
+      background-color: #be161c;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(227, 31, 38, 0.3);
+    }
+
+    .btn-yellow {
+      background-color: var(--primary-yellow);
+      color: var(--primary-black);
+    }
+
+    .btn-yellow:hover {
+      background-color: #e5c700;
+    }
+
+    section {
+      padding: 65px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+      color: var(--primary-black);
+      font-weight: 800;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      font-size: 1.05rem;
+    }
+
+    .brand-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      user-select: none;
+    }
+
+    .brand-symbol {
+      width: 48px;
+      height: 58px;
+      flex-shrink: 0;
+    }
+
+    .brand-typography {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .brand-typography .txt-assoc {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--primary-black);
+      letter-spacing: 0.5px;
+    }
+
+    .brand-typography .txt-pestalozzi {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 1.55rem;
+      color: var(--primary-black);
+      letter-spacing: -0.3px;
+      margin: 1px 0;
+    }
+
+    .brand-typography .txt-itaborai {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary-black);
+      letter-spacing: 1px;
+    }
+
+    header {
+      background-color: var(--white);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: var(--primary-red);
+    }
+
+    .lang-select {
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 2px solid var(--primary-black);
+      background-color: var(--white);
+      color: var(--primary-black);
+      font-weight: 700;
+      cursor: pointer;
+      outline: none;
+      font-size: 0.85rem;
+    }
+
+    .hero {
+      position: relative;
+      background: linear-gradient(
+                    180deg, 
+                    rgba(31, 26, 23, 0.78) 0%, 
+                    rgba(31, 26, 23, 0.65) 50%, 
+                    rgba(31, 26, 23, 0.88) 100%
+                  ), 
+                  url('foto-comunidade.png') center center / cover no-repeat;
+      color: var(--white);
+      text-align: center;
+      padding: 110px 0;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--primary-yellow);
+      color: var(--primary-black);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .hero h1 {
+      font-size: 2.9rem;
+      margin-bottom: 18px;
+      font-weight: 800;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 760px;
+      margin: 0 auto 35px auto;
+      opacity: 0.95;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+      line-height: 1.7;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      border-top: 4px solid var(--primary-red);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-img-wrapper {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .card-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .card-img-wrapper img {
+      transform: scale(1.04);
+    }
+
+    .card-body {
+      padding: 24px;
+      flex: 1;
+    }
+
+    .card-body h3 {
+      color: var(--primary-black);
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .gallery-card-clickable {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      height: 240px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-card-clickable:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+
+    .gallery-card-clickable img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-card-clickable:hover img {
+      transform: scale(1.06);
+    }
+
+    .gallery-card-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--primary-yellow);
+      color: var(--primary-black);
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      z-index: 2;
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(31, 26, 23, 0.9));
+      color: var(--white);
+      padding: 16px;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(31, 26, 23, 0.88);
+      backdrop-filter: blur(5px);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-container {
+      background: #fff;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 950px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 30px;
+      position: relative;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary-black);
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+
+    .modal-close-btn:hover {
+      color: var(--primary-red);
+    }
+
+    .modal-header {
+      margin-bottom: 20px;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 12px;
+    }
+
+    .modal-header h3 {
+      font-size: 1.6rem;
+      color: var(--primary-black);
+    }
+
+    .modal-header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .modal-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+
+    .modal-gallery-item {
+      height: 180px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #eee;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .modal-gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .modal-gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 3000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      user-select: none;
+    }
+
+    .lightbox-overlay.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 85vh;
+      border-radius: 8px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+      object-fit: contain;
+    }
+
+    .lightbox-close-btn {
+      position: absolute;
+      top: -45px;
+      right: 0;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #fff;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+
+    .lightbox-close-btn:hover {
+      color: var(--primary-yellow);
+    }
+
+    .lightbox-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(31, 26, 23, 0.7);
+      color: #ffffff;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      z-index: 3100;
+    }
+
+    .lightbox-nav-btn:hover {
+      background: var(--primary-red);
+      border-color: var(--white);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .lightbox-nav-prev { left: 20px; }
+    .lightbox-nav-next { right: 20px; }
+
+    .donation-section {
+      background-color: var(--bg-light);
+    }
+
+    .donation-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      padding: 12px 22px;
+      border: 2px solid var(--primary-black);
+      background: transparent;
+      color: var(--primary-black);
+      font-weight: 700;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .tab-btn.active, .tab-btn:hover {
+      background-color: var(--primary-red);
+      border-color: var(--primary-red);
+      color: var(--white);
+    }
+
+    .tab-content {
+      display: none;
+      background: var(--white);
+      padding: 35px;
+      border-radius: 16px;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: var(--card-shadow);
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .pix-container {
+      display: grid;
+      grid-template-columns: 1fr 180px;
+      gap: 25px;
+      background: var(--bg-light);
+      padding: 25px;
+      border-radius: 12px;
+      align-items: center;
+      margin-top: 15px;
+    }
+
+    .pix-key {
+      font-family: monospace;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-red);
+      background: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px dashed var(--primary-red);
+      margin: 10px 0 15px 0;
+      word-break: break-all;
+    }
+
+    .qr-box {
+      text-align: center;
+    }
+
+    .qr-box img {
+      width: 150px;
+      height: 150px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      background: white;
+      padding: 5px;
+      object-fit: contain;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, select, textarea {
+      padding: 12px 15px;
+      border: 1px solid #ced4da;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--primary-red);
+    }
+
+    .delivery-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .delivery-card {
+      border: 1px solid #e9ecef;
+      background: var(--bg-light);
+      padding: 22px;
+      border-radius: 12px;
+      text-align: left;
+    }
+
+    .delivery-card h4 {
+      color: var(--primary-red);
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+
+    .delivery-card p {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    .info-highlight-box {
+      background: #fff;
+      border-left: 3px solid var(--primary-red);
+      padding: 10px 12px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: #333;
+    }
+
+    .wishlist-box {
+      background: #fff9e6;
+      border-left: 4px solid var(--primary-yellow);
+      padding: 15px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+
+    .wishlist-box h4 {
+      color: var(--primary-black);
+      margin-bottom: 6px;
+    }
+
+    .wishlist-box ul {
+      margin-left: 20px;
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .partner-card {
+      background: var(--bg-light);
+      border: 1px solid #e9ecef;
+      border-radius: 10px;
+      padding: 20px 15px;
+      text-align: center;
+    }
+
+    .partner-card h4 {
+      color: var(--primary-black);
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+
+    .partner-card p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    footer {
+      background-color: var(--primary-black);
+      color: var(--white);
+      padding: 50px 0 25px 0;
+      font-size: 0.95rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 35px;
+      margin-bottom: 35px;
+      text-align: left;
+    }
+
+    .footer-col h3, .footer-col h4 {
+      color: var(--primary-yellow);
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .footer-col p {
+      color: #cfcfcf;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .social-btn {
+      display: inline-block;
+      padding: 8px 16px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px;
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .social-btn:hover {
+      background: var(--primary-red);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #888;
+    }
+
+    @media (max-width: 768px) {
+      .nav-container, .nav-right {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+      .pix-container {
+        grid-template-columns: 1fr;
+      }
+      .donation-tabs {
+        flex-direction: column;
+      }
+      .delivery-options {
+        grid-template-columns: 1fr;
+      }
+      .lightbox-nav-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 1.4rem;
+      }
+      .lightbox-nav-prev { left: 8px; }
+      .lightbox-nav-next { right: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="brand-logo-wrap">
+        <svg class="brand-symbol" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 30 6 C 15 6 8 15 8 30 L 8 85 C 8 100 15 110 32 110" stroke="#FBDB00" stroke-width="7" stroke-linecap="round"/>
+          <path d="M 70 6 C 85 6 92 15 92 30 L 92 85 C 92 100 85 110 68 110" stroke="#FBDB00" stroke-width="7" stroke-linecap="round"/>
+          <path d="M 45 6 L 55 6" stroke="#FBDB00" stroke-width="7" stroke-linecap="round"/>
+          
+          <path d="M 40 28 C 40 20 46 16 52 16 C 58 16 63 20 63 25 C 63 32 55 36 50 38 C 45 36 40 32 40 28 Z" fill="#E31F26"/>
+          <path d="M 35 27 C 35 22 41 18 47 18 C 44 24 47 28 52 29 C 48 33 41 34 37 32 C 35 30 35 28 35 27 Z" fill="#D92827"/>
+          <path d="M 65 27 C 65 22 59 18 53 18 C 56 24 53 28 48 29 C 52 33 59 34 63 32 C 65 30 65 28 65 27 Z" fill="#D92827"/>
+          <path d="M 43 36 C 47 34 53 34 57 36 C 55 42 45 42 43 36 Z" fill="#B71C1C"/>
+
+          <path d="M 50 40 L 50 98" stroke="#1F1A17" stroke-width="4.5" stroke-linecap="round"/>
+          
+          <path d="M 50 48 Q 66 43 72 49 Q 63 56 50 52 Z" fill="#1F1A17"/>
+          <path d="M 50 58 Q 34 52 28 60 Q 38 67 50 63 Z" fill="#1F1A17"/>
+          <path d="M 50 67 Q 67 62 74 70 Q 64 78 50 72 Z" fill="#1F1A17"/>
+          <path d="M 50 78 Q 33 73 27 82 Q 39 88 50 82 Z" fill="#1F1A17"/>
+          <path d="M 50 86 Q 64 82 70 89 Q 60 95 50 90 Z" fill="#1F1A17"/>
+        </svg>
+
+        <div class="brand-typography">
+          <span class="txt-assoc">Associação</span>
+          <span class="txt-pestalozzi">Pestalozzi</span>
+          <span class="txt-itaborai">de Itaboraí</span>
+        </div>
+      </a>
+
+      <div class="nav-right">
+        <nav>
+          <ul>
+            <li><a href="#about" data-i18n="nav-about">Sobre Nós</a></li>
+            <li><a href="#projects" data-i18n="nav-projects">Projetos</a></li>
+            <li><a href="#gallery" data-i18n="nav-gallery">Galeria</a></li>
+            <li><a href="#donate" data-i18n="nav-donate">Como Ajudar</a></li>
+            <li><a href="#partners" data-i18n="nav-partners">Parceiros</a></li>
+            <li><a href="#contact" data-i18n="nav-contact">Contato</a></li>
+          </ul>
+        </nav>
+        
+        <div class="lang-select-wrapper">
+          <select class="lang-select" id="langSelect" onchange="changeLanguage(this.value)">
+            <option value="pt">PT 🇧🇷</option>
+            <option value="en">EN 🇺🇸</option>
+            <option value="es">ES 🇪🇸</option>
+            <option value="ro">RO 🇷🇴</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <span class="hero-badge" data-i18n="hero-badge">✨ CNPJ Oficial: 30.593.800/0001-24</span>[cite: 2]
+      <h1 data-i18n="hero-title">Transformando vidas em Itaboraí</h1>
+      <p data-i18n="hero-subtitle">Apoie a Associação Pestalozzi de Itaboraí no atendimento clínico, reabilitação e inclusão social de pessoas com deficiência e suas famílias.</p>
+      <a href="#donate" class="btn btn-yellow" data-i18n="hero-btn">Faça uma Doação</a>
+    </div>
+  </section>
+
+  <section id="about" class="container">
+    <h2 class="section-title" data-i18n="about-title">Sobre a Nossa Instituição</h2>
+    <p class="section-subtitle" data-i18n="about-subtitle">Fundada em 1982, dedicada à inclusão e assistência com excelência e afeto.</p>
+    
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-body">
+          <h3 data-i18n="mission-title">Nossa Missão</h3>
+          <p data-i18n="mission-desc">Promover a autonomia, inclusão social e qualidade de vida das pessoas com deficiência e em situação de vulnerabilidade.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h3 data-i18n="values-title">Nossos Valores</h3>
+          <p data-i18n="values-desc">Respeito, transparência, afeto, compromisso social e dedicação contínua ao desenvolvimento humano integral.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h3 data-i18n="impact-title">Nosso Impacto</h3>
+          <p data-i18n="impact-desc">Centenas de atendimentos anuais em saúde, educação inclusiva, oficinas produtivas e suporte a famílias.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" style="background-color: var(--bg-light);">
+    <div class="container">
+      <h2 class="section-title" data-i18n="projects-title">Nossos Projetos</h2>
+      <p class="section-subtitle" data-i18n="projects-subtitle">Frentes de atuação onde cada contribuição gera transformação real.</p>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="foto-fisioterapia.png" alt="Fisioterapia e Reabilitação">
+          </div>
+          <div class="card-body">
+            <h3 data-i18n="p1-title">Atendimento Multidisciplinar</h3>
+            <p data-i18n="p1-desc">Fonoaudiologia, fisioterapia, psicologia e terapia ocupacional para desenvolvimento motor e cognitivo.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="foto-gestante.png" alt="Oficinas Inclusivas">
+          </div>
+          <div class="card-body">
+            <h3 data-i18n="p2-title">Oficinas Inclusivas & Movimento</h3>
+            <p data-i18n="p2-desc">Atividades corporais, capacitação pedagógica e expressão artística para jovens e adultos.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="foto-oficina.png" alt="Apoio Comunitário e Mães">
+          </div>
+          <div class="card-body">
+            <h3 data-i18n="p3-title">Família e Comunidade</h3>
+            <p data-i18n="p3-desc">Suporte social, acolhimento de gestantes, ateliê de mães e doação contínua de insumos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="container">
+    <h2 class="section-title" data-i18n="gallery-title">Nosso Impacto em Imagens</h2>
+    <p class="section-subtitle" data-i18n="gallery-subtitle">Clique em uma categoria para abrir o álbum completo de fotos.</p>
+
+    <div class="gallery-grid">
+      <!-- 1. FISIOTERAPIA -->
+      <div class="gallery-card-clickable" onclick="openModal('fisioterapia-modal')">
+        <span class="gallery-card-badge" data-i18n="badge-photos">📸 10 Fotos</span>
+        <img src="foto-fisioterapia.png" alt="Fisioterapia, Esporte e Dança">
+        <div class="gallery-caption" data-i18n="cap-1">Fisioterapia, Esporte & Dança Inclusiva</div>
+      </div>
+
+      <!-- 2. PEDAGOGIA -->
+      <div class="gallery-card-clickable" onclick="openModal('pedagogie-modal')">
+        <span class="gallery-card-badge" data-i18n="badge-peda-photos">📸 18 Fotos</span>
+        <img src="peda1.png" alt="Oficinas Pedagógicas & Psicomotricidade">
+        <div class="gallery-caption" data-i18n="cap-2">Oficinas Pedagógicas & Psicomotricidade</div>
+      </div>
+
+      <!-- 3. FAMÍLIA E COMUNIDADE -->
+      <div class="gallery-card-clickable" onclick="openModal('familie-modal')">
+        <span class="gallery-card-badge" data-i18n="badge-fam-photos">📸 10 Fotos</span>
+        <img src="familie1.png" alt="Família e Comunidade">
+        <div class="gallery-caption" data-i18n="cap-3">Família e Comunidade</div>
+      </div>
+
+      <!-- 4. VOLUNTARIADO E COMUNIDADE -->
+      <div class="gallery-card-clickable" onclick="openModal('voluntariat-modal')">
+        <span class="gallery-card-badge" data-i18n="badge-vol-photos">📸 6 Fotos</span>
+        <img src="voluntar1.png" alt="Ações Comunitárias e Voluntariado">
+        <div class="gallery-caption" data-i18n="cap-4">Integração Comunitária e Voluntariado</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL 1: FISIOTERAPIA -->
+  <div id="fisioterapia-modal" class="modal-overlay" onclick="closeModalOnOutsideClick(event, 'fisioterapia-modal')">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="closeModal('fisioterapia-modal')">&times;</button>
+      <div class="modal-header">
+        <h3 data-i18n="modal-fisioterapia-title">Fisioterapia, Esporte & Dança Inclusiva</h3>
+        <p data-i18n="modal-fisioterapia-desc">Registros das sessões de reabilitação física, coordenação motora, atividades rítmicas e exercícios em grupo.</p>
+      </div>
+      
+      <div class="modal-gallery-grid">
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('fisioterapia', 0)"><img src="foto-fisioterapia.png" alt="Fisioterapia 1"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('fisioterapia', 1)"><img src="fisipterapie2.png" alt="Fisioterapia 2"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('fisioterapia', 2)"><img src="fisioterapie1.png" alt="Fisioterapia 3"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('fisioterapia', 3)"><img src="fisioterapie3.png" alt="Fisioterapia 4"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('fisioterapia', 4)"><img src="dans1.png" alt="Dança e Celebração"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('fisioterapia', 5)"><img src="dans2.png" alt="Exercício com Bola"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('fisioterapia', 6)"><img src="dans3.png" alt="Alongamento e Movimento"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('fisioterapia', 7)"><img src="dans4.png" alt="Atividade Postural"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('fisioterapia', 8)"><img src="dans6.png" alt="Circuito de Psicomotricidade"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('fisioterapia', 9)"><img src="dans7.png" alt="Expressão Corporal com Tecidos"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: PEDAGOGIE -->
+  <div id="pedagogie-modal" class="modal-overlay" onclick="closeModalOnOutsideClick(event, 'pedagogie-modal')">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="closeModal('pedagogie-modal')">&times;</button>
+      <div class="modal-header">
+        <h3 data-i18n="modal-pedagogie-title">Oficinas Pedagógicas & Psicomotricidade</h3>
+        <p data-i18n="modal-pedagogie-desc">Atividades educativas, artísticas, dinâmicas de concentração e desenvolvimento cognitivo.</p>
+      </div>
+      
+      <div class="modal-gallery-grid">
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('pedagogie', 0)"><img src="peda1.png" alt="Pedagogie 1"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('pedagogie', 1)"><img src="peda2.png" alt="Pedagogie 2"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('pedagogie', 2)"><img src="peda3.png" alt="Pedagogie 3"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('pedagogie', 3)"><img src="peda4.png" alt="Pedagogie 4"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('pedagogie', 5)"><img src="peda5.png" alt="Pedagogie 5"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('pedagogie', 6)"><img src="peda6.png" alt="Pedagogie 6"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('pedagogie', 7)"><img src="peda7.png" alt="Pedagogie 7"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('pedagogie', 8)"><img src="peda8.png" alt="Pedagogie 8"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('pedagogie', 9)"><img src="peda9.png" alt="Pedagogie 9"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('pedagogie', 10)"><img src="peda10.png" alt="Pedagogie 10"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('pedagogie', 11)"><img src="peda11.png" alt="Pedagogie 11"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('pedagogie', 12)"><img src="peda12.png" alt="Pedagogie 12"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('pedagogie', 13)"><img src="peda13.png" alt="Pedagogie 13"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('pedagogie', 14)"><img src="peda14.png" alt="Pedagogie 14"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('pedagogie', 15)"><img src="peda15.png" alt="Pedagogie 15"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('pedagogie', 16)"><img src="peda16.png" alt="Pedagogie 16"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('pedagogie', 17)"><img src="peda17.png" alt="Pedagogie 17"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('pedagogie', 18)"><img src="peda18.png" alt="Pedagogie 18"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 3: FAMÍLIA E COMUNIDADE -->
+  <div id="familie-modal" class="modal-overlay" onclick="closeModalOnOutsideClick(event, 'familie-modal')">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="closeModal('familie-modal')">&times;</button>
+      <div class="modal-header">
+        <h3 data-i18n="modal-familie-title">Família e Comunidade</h3>
+        <p data-i18n="modal-familie-desc">Encontros de apoio familiar, integração social, palestras e dinâmicas comunitárias.</p>
+      </div>
+      
+      <div class="modal-gallery-grid">
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('familie', 0)"><img src="familie1.png" alt="Família 1"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('familie', 1)"><img src="familie2.png" alt="Família 2"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('familie', 2)"><img src="familie3.png" alt="Família 3"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('familie', 3)"><img src="familie4.png" alt="Família 4"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('familie', 4)"><img src="familie5.png" alt="Família 5"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('familie', 6)"><img src="familie6.png" alt="Família 6"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('familie', 7)"><img src="familie7.png" alt="Família 7"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('familie', 8)"><img src="familie8.png" alt="Família 8"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('familie', 9)"><img src="familie9.png" alt="Família 9"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('familie', 10)"><img src="familie10.png" alt="Família 10"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 4: VOLUNTARIADO E COMUNIDADE -->
+  <div id="voluntariat-modal" class="modal-overlay" onclick="closeModalOnOutsideClick(event, 'voluntariat-modal')">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="closeModal('voluntariat-modal')">&times;</button>
+      <div class="modal-header">
+        <h3 data-i18n="modal-vol-title">Integração Comunitária e Voluntariado</h3>
+        <p data-i18n="modal-vol-desc">Atividades ao ar livre, dinâmicas de inclusão, participação voluntária e momentos em grupo.</p>
+      </div>
+      
+      <div class="modal-gallery-grid">
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('voluntariat', 0)"><img src="voluntar1.png" alt="Voluntariado 1"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('voluntariat', 1)"><img src="voluntar2.png" alt="Voluntariado 2"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('voluntariat', 2)"><img src="voluntar3.png" alt="Voluntariado 3"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('voluntariat', 3)"><img src="voluntar4.png" alt="Voluntariado 4"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('voluntariat', 4)"><img src="voluntar5.png" alt="Voluntariado 5"></div>
+        <div class="modal-gallery-item" onclick="openLightboxByGallery('voluntariat', 5)"><img src="voluntar6.png" alt="Voluntariado 6"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX POP-UP CU BUTOANE NEXT / PREV -->
+  <div id="lightboxModal" class="lightbox-overlay" onclick="closeLightboxOnOutsideClick(event)">
+    <button class="lightbox-nav-btn lightbox-nav-prev" onclick="event.stopPropagation(); prevImage();" title="Anterior">&#10094;</button>
+    <div class="lightbox-content">
+      <button class="lightbox-close-btn" onclick="closeLightbox()">&times;</button>
+      <img id="lightboxImg" src="" alt="Imagem Ampliada">
+    </div>
+    <button class="lightbox-nav-btn lightbox-nav-next" onclick="event.stopPropagation(); nextImage();" title="Próxima">&#10095;</button>
+  </div>
+
+  <section id="donate" class="donation-section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="donate-title">Como Ajudar</h2>
+      <p class="section-subtitle" data-i18n="donate-subtitle">Escolha a forma mais fácil para realizar sua doação segura.</p>
+
+      <div class="donation-tabs">
+        <button class="tab-btn active" onclick="openTab(event, 'pix')" data-i18n="tab-pix">📱 PIX (Brasil)</button>
+        <button class="tab-btn" onclick="openTab(event, 'card')" data-i18n="tab-card">💳 Cartão / Internacional</button>
+        <button class="tab-btn" onclick="openTab(event, 'material')" data-i18n="tab-material">📦 Doação Material</button>
+      </div>
+
+      <div id="pix" class="tab-content active">
+        <h3 data-i18n="pix-heading" style="color: var(--primary-black); margin-bottom: 6px;">Doação Direta via PIX</h3>
+        <p data-i18n="pix-desc">A forma mais rápida e 100% sem taxas. O valor entra direto na conta da Associação.</p>
+        
+        <div class="pix-container">
+          <div>
+            <p><strong data-i18n="pix-label">Chave Oficial (CNPJ):</strong></p>
+            <div class="pix-key" id="pixKey">30.593.800/0001-24</div>
+            <p style="font-size: 0.85rem; color: #666; margin-bottom: 12px;"><strong>Titular:</strong> Associação Pestalozzi de Itaboraí</p>
+            <button class="btn" onclick="copyPix()" data-i18n="pix-copy-btn">Copiar Chave PIX</button>
+          </div>
+          <div class="qr-box">
+            <img src="pixqr.jpeg" alt="QR Code PIX">
+            <small style="display:block; margin-top: 5px; color: #777;" data-i18n="qr-hint">Aponte a câmera do seu banco</small>
+          </div>
+        </div>
+      </div>
+
+      <div id="card" class="tab-content" style="text-align: center; padding: 40px 20px;">
+        <h3 data-i18n="card-heading" style="color: var(--primary-black); margin-bottom: 12px; font-size: 1.5rem; font-weight: 700;">Cartão de Crédito / Internacional</h3>
+        <p data-i18n="card-desc" style="max-width: 620px; margin: 0 auto 25px auto; color: #555; font-size: 1rem; line-height: 1.6;">
+          Preencha o formulário rápido de doação com seu valor preferido e receba o link direto e seguro para finalizar sua contribuição.
+        </p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfqsUlkIZsQ94IoMw8BYu_fXbbJbxr8nooFFll4mRRuV7h9pw/viewform" target="_blank" class="btn" data-i18n="card-btn-form" style="padding: 14px 34px; font-size: 1.05rem; display: inline-block;">
+          📋 Preencher Formulário de Doação
+        </a>
+      </div>
+
+      <div id="material" class="tab-content">
+        <h3 data-i18n="mat-heading" style="color: var(--primary-black); margin-bottom: 6px;">Doação de Materiais e Insumos</h3>
+        <p data-i18n="mat-desc">Aceitamos alimentos não perecíveis, materiais de limpeza, insumos escolares e equipamentos.</p>
+
+        <div class="wishlist-box">
+          <h4 data-i18n="wishlist-title">📦 Principais Necessidades:</h4>
+          <ul>
+            <li data-i18n="wish-1">Alimentos não perecíveis para cestas básicas</li>
+            <li data-i18n="wish-2">Materiais de limpeza e higiene pessoal</li>
+            <li data-i18n="wish-3">Materiais escolares, papéis e tecidos para o ateliê</li>
+            <li data-i18n="wish-4">Cadeiras de rodas e materiais terapêuticos</li>
+          </ul>
+        </div>
+
+        <h4 style="color: var(--primary-black); margin-bottom: 10px;" data-i18n="delivery-title">Formas de Entrega:</h4>
+
+        <div class="delivery-options">
+          <div class="delivery-card">
+            <h4>🏢 <span data-i18n="del1-title">Entrega Presencial na Sede</span></h4>
+            <p data-i18n="del1-desc">Você pode trazer sua doação pessoalmente diretamente à nossa instituição.</p>
+            <div class="info-highlight-box">
+              <strong data-i18n="del1-time-title">⏰ Horário de Recebimento:</strong><br>
+              <span data-i18n="del1-hours">Segunda a Sexta-feira, das 08h às 17h</span><br><br>
+              <strong>📍 Endereço:</strong><br>
+              Rua José Carlos Soares, S/N, Lotes 9 a 11, Quadra 16 - Nancilândia, Itaboraí - RJ
+            </div>
+          </div>
+
+          <div class="delivery-card">
+            <h4>📮 <span data-i18n="del2-title">Envio pelos Correios</span></h4>
+            <p data-i18n="del2-desc">Envie sua encomenda via agência dos Correios para os dados oficiais da instituição:</p>
+            <div class="info-highlight-box">
+              <strong>Destinatário:</strong> Associação Pestalozzi de Itaboraí<br>
+              <strong>Endereço:</strong> Rua José Carlos Soares, S/N (Lotes 9-11, Qd 16)<br>
+              <strong>Bairro:</strong> Nancilândia | <strong>Cidade:</strong> Itaboraí - RJ<br>
+              <strong>CEP:</strong> 24.800-001<br>
+              <strong>CNPJ:</strong> 30.593.800/0001-24
+            </div>
+          </div>
+        </div>
+
+        <form id="materialForm" onsubmit="handleFormSubmit(event, 'Materiais')">
+          <h4 style="margin-top: 10px; color: var(--primary-black);" data-i18n="form-mat-title">Avisar Doação Material</h4>
+          <input type="text" placeholder="Nome Completo / Empresa" required id="mat-name">
+          <input type="tel" placeholder="Telefone / WhatsApp" required id="mat-phone">
+          <textarea rows="3" placeholder="Descreva os itens a doar e se irá entregar presencialmente ou enviar por correio..." required id="mat-desc"></textarea>
+          <button type="submit" class="btn" data-i18n="mat-submit">Enviar Notificação</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="partners" class="container">
+    <h2 class="section-title" data-i18n="partners-title">Parceiros e Apoiadores</h2>
+    <p class="section-subtitle" data-i18n="partners-subtitle">Instituições, empresas e órgãos públicos que apoiam o nosso trabalho.</p>
+    
+    <div class="partners-grid">
+      <div class="partner-card">
+        <h4>Petrobras</h4>
+        <p data-i18n="partner-corp">Parceiro Corporativo</p>
+      </div>
+      <div class="partner-card">
+        <h4>ENEL</h4>
+        <p data-i18n="partner-corp">Parceiro Corporativo</p>
+      </div>
+      <div class="partner-card">
+        <h4>AIESEC</h4>
+        <p data-i18n="partner-intl">Parceiro Internacional de Impacto Social</p>
+      </div>
+      <div class="partner-card">
+        <h4>Sec. de Cultura do Estado do RJ</h4>
+        <p data-i18n="partner-gov-rj">Apoio Cultural e Institucional</p>
+      </div>
+      <div class="partner-card">
+        <h4>CMAS</h4>
+        <p data-i18n="partner-council">Conselho de Assistência Social</p>
+      </div>
+      <div class="partner-card">
+        <h4>CMDCA</h4>
+        <p data-i18n="partner-council">Direitos da Criança e Adolescente</p>
+      </div>
+      <div class="partner-card">
+        <h4>CMPD</h4>
+        <p data-i18n="partner-council">Conselho da Pessoa com Deficiência</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+            <svg style="width: 38px; height: 46px;" viewBox="0 0 100 120" fill="none">
+              <path d="M 30 6 C 15 6 8 15 8 30 L 8 85 C 8 100 15 110 32 110" stroke="#FBDB00" stroke-width="7" stroke-linecap="round"/>
+              <path d="M 70 6 C 85 6 92 15 92 30 L 92 85 C 92 100 85 110 68 110" stroke="#FBDB00" stroke-width="7" stroke-linecap="round"/>
+              <path d="M 45 6 L 55 6" stroke="#FBDB00" stroke-width="7" stroke-linecap="round"/>
+              <path d="M 40 28 C 40 20 46 16 52 16 C 58 16 63 20 63 25 C 63 32 55 36 50 38 C 45 36 40 32 40 28 Z" fill="#E31F26"/>
+              <path d="M 50 40 L 50 98" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
+              <path d="M 50 48 Q 66 43 72 49 Q 63 56 50 52 Z" fill="#FFFFFF"/>
+              <path d="M 50 58 Q 34 52 28 60 Q 38 67 50 63 Z" fill="#FFFFFF"/>
+              <path d="M 50 67 Q 67 62 74 70 Q 64 78 50 72 Z" fill="#FFFFFF"/>
+              <path d="M 50 78 Q 33 73 27 82 Q 39 88 50 82 Z" fill="#FFFFFF"/>
+              <path d="M 50 86 Q 64 82 70 89 Q 60 95 50 90 Z" fill="#FFFFFF"/>
+            </svg>
+            <div>
+              <div style="font-size: 0.7rem; color: #ccc;">Associação</div>
+              <div style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700; font-size: 1.2rem; color: #fff;">Pestalozzi</div>
+              <div style="font-size: 0.7rem; font-weight: 700; color: #FBDB00;">de Itaboraí</div>
+            </div>
+          </div>
+
+          <p><strong>CNPJ:</strong> 30.593.800/0001-24</p>
+          <p data-i18n="footer-legal">Associação Privada de Assistência Social e Reabilitação.</p>
+          <div class="social-links">
+            <a href="https://instagram.com/pestalozziitaborai" target="_blank" class="social-btn">@pestalozziitaborai</a>
+            <a href="https://instagram.com/jardimdenadia" target="_blank" class="social-btn">@jardimdenadia</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer-contact-title">Canais de Contato</h4>
+          <p><strong>WhatsApp:</strong> <a href="https://wa.me/5521987120267" target="_blank" style="color:#fff; text-decoration: underline;">+55 21 98712-0267</a></p>
+          <p><strong>Telefone Sede:</strong> (21) 2635-7345</p>
+          <p><strong>E-mail:</strong> contato@pestalozziitaborai.org.br</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer-location-title">Endereço da Sede</h4>
+          <p>Rua José Carlos Soares, S/N</p>
+          <p>Lote 9 a 11, Quadra 16 - Nancilândia</p>
+          <p>Itaboraí - RJ, CEP: 24.800-001</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Associação Pestalozzi de Itaboraí. <span data-i18n="footer-rights">Todos os direitos reservados.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var galleryData = {
+      fisioterapia: [
+        'foto-fisioterapia.png',
+        'fisipterapie2.png',
+        'fisioterapie1.png',
+        'fisioterapie3.png',
+        'dans1.png',
+        'dans2.png',
+        'dans3.png',
+        'dans4.png',
+        'dans6.png',
+        'dans7.png'
+      ],
+      pedagogie: [
+        'peda1.png',
+        'peda2.png',
+        'peda3.png',
+        'peda4.png',
+        'peda5.png',
+        'peda6.png',
+        'peda7.png',
+        'peda8.png',
+        'peda9.png',
+        'peda10.png',
+        'peda11.png',
+        'peda12.png',
+        'peda13.png',
+        'peda14.png',
+        'peda15.png',
+        'peda16.png',
+        'peda17.png',
+        'peda18.png'
+      ],
+      familie: [
+        'familie1.png',
+        'familie2.png',
+        'familie3.png',
+        'familie4.png',
+        'familie5.png',
+        'familie6.png',
+        'familie7.png',
+        'familie8.png',
+        'familie9.png',
+        'familie10.png'
+      ],
+      voluntariat: [
+        'voluntar1.png',
+        'voluntar2.png',
+        'voluntar3.png',
+        'voluntar4.png',
+        'voluntar5.png',
+        'voluntar6.png'
+      ]
+    };
+
+    var currentGallery = 'voluntariat';
+    var currentImageIndex = 0;
+
+    var translations = {
+      pt: {
+        "nav-about": "Sobre Nós",
+        "nav-projects": "Projetos",
+        "nav-gallery": "Galeria",
+        "nav-donate": "Como Ajudar",
+        "nav-partners": "Parceiros",
+        "nav-contact": "Contato",
+        "hero-badge": "✨ CNPJ Oficial: 30.593.800/0001-24",
+        "hero-title": "Transformando vidas em Itaboraí",
+        "hero-subtitle": "Apoie a Associação Pestalozzi de Itaboraí no atendimento clínico, reabilitação e inclusão social de pessoas com deficiência e suas famílias.",
+        "hero-btn": "Faça uma Doação",
+        "about-title": "Sobre a Nossa Instituição",
+        "about-subtitle": "Fundada em 1982, dedicada à inclusão e assistência com excelência e afeto.",
+        "mission-title": "Nossa Missão",
+        "mission-desc": "Promover a autonomia, inclusão social e qualidade de vida das pessoas com deficiência e em situação de vulnerabilidade.",
+        "values-title": "Nossos Valores",
+        "values-desc": "Respeito, transparência, afeto, compromisso social e dedicação contínua ao desenvolvimento humano integral.",
+        "impact-title": "Nosso Impacto",
+        "impact-desc": "Centenas de atendimentos anuais em saúde, educação inclusiva, oficinas produtivas e suporte a famílias.",
+        "projects-title": "Nossos Projetos",
+        "projects-subtitle": "Frentes de atuação onde cada contribuição gera transformação real.",
+        "p1-title": "Atendimento Multidisciplinar",
+        "p1-desc": "Fonoaudiologia, fisioterapia, psicologia e terapia ocupacional para desenvolvimento motor e cognitivo.",
+        "p2-title": "Oficinas Inclusivas & Movimento",
+        "p2-desc": "Atividades corporais, capacitação pedagógica e expressão artística para jovens e adultos.",
+        "p3-title": "Família e Comunidade",
+        "p3-desc": "Suporte social, acolhimento de gestantes, ateliê de mães e doação contínua de insumos.",
+        "gallery-title": "Nosso Impacto em Imagens",
+        "gallery-subtitle": "Clique em uma categoria para abrir o álbum completo de fotos.",
+        "badge-photos": "📸 10 Fotos",
+        "badge-peda-photos": "📸 18 Fotos",
+        "badge-fam-photos": "📸 10 Fotos",
+        "badge-vol-photos": "📸 6 Fotos",
+        "cap-1": "Fisioterapia, Esporte & Dança Inclusiva",
+        "cap-2": "Oficinas Pedagógicas & Psicomotricidade",
+        "cap-3": "Família e Comunidade",
+        "cap-4": "Integração Comunitária e Voluntariado",
+        "modal-fisioterapia-title": "Fisioterapia, Esporte & Dança Inclusiva",
+        "modal-fisioterapia-desc": "Registros das sessões de reabilitação física, coordenação motora, atividades rítmicas e exercícios em grupo.",
+        "modal-pedagogie-title": "Oficinas Pedagógicas & Psicomotricidade",
+        "modal-pedagogie-desc": "Atividades educativas, artísticas, dinâmicas de concentração e desenvolvimento cognitivo.",
+        "modal-familie-title": "Família e Comunidade",
+        "modal-familie-desc": "Encontros de apoio familiar, integração social, palestras e dinâmicas comunitárias.",
+        "modal-vol-title": "Integração Comunitária e Voluntariado",
+        "modal-vol-desc": "Atividades ao ar livre, dinâmicas de inclusão, participação voluntária e momentos em grupo.",
+        "donate-title": "Como Ajudar",
+        "donate-subtitle": "Escolha a forma mais fácil para realizar sua doação segura.",
+        "tab-pix": "📱 PIX (Brasil)",
+        "tab-card": "💳 Cartão / Internacional",
+        "tab-material": "📦 Doação Material",
+        "pix-heading": "Doação Direta via PIX",
+        "pix-desc": "A forma mais rápida e 100% sem taxas. O valor entra direto na conta da Associação.",
+        "pix-label": "Chave Oficial (CNPJ):",
+        "pix-copy-btn": "Copiar Chave PIX",
+        "qr-hint": "Aponte a câmera do seu banco",
+        "card-heading": "Cartão de Crédito / Internacional",
+        "card-desc": "Preencha o formulário rápido de doação com seu valor preferido e receba o link direto e seguro para finalizar sua contribuição.",
+        "card-btn-form": "📋 Preencher Formulário de Doação",
+        "mat-heading": "Doação de Materiais e Insumos",
+        "mat-desc": "Aceitamos alimentos não perecíveis, materiais de limpeza, insumos escolares e equipamentos.",
+        "wishlist-title": "📦 Principais Necessidades:",
+        "wish-1": "Alimentos não perecíveis para cestas básicas",
+        "wish-2": "Materiais de limpeza e higiene pessoal",
+        "wish-3": "Materiais escolares, papéis e tecidos para o ateliê",
+        "wish-4": "Cadeiras de rodas e materiais terapêuticos",
+        "delivery-title": "Formas de Entrega:",
+        "del1-title": "Entrega Presencial na Sede",
+        "del1-desc": "Você pode trazer sua doação pessoalmente diretamente à nossa instituição.",
+        "del1-time-title": "⏰ Horário de Recebimento:",
+        "del1-hours": "Segunda a Sexta-feira, das 08h às 17h",
+        "del2-title": "Envio pelos Correios",
+        "del2-desc": "Envie sua encomenda via agência dos Correios para os dados oficiais da instituição:",
+        "form-mat-title": "Avisar Doação Material",
+        "mat-submit": "Enviar Notificação",
+        "partners-title": "Parceiros e Apoiadores",
+        "partners-subtitle": "Instituições, empresas e órgãos públicos que apoiam o nosso trabalho.",
+        "partner-corp": "Parceiro Corporativo",
+        "partner-intl": "Parceiro Internacional de Impacto Social",
+        "partner-gov-rj": "Apoio Cultural e Institucional",
+        "partner-council": "Conselho de Apoio Social",
+        "footer-legal": "Associação Privada de Assistência Social e Reabilitação.",
+        "footer-contact-title": "Canais de Contato",
+        "footer-location-title": "Endereço da Sede",
+        "footer-rights": "Todos os direitos reservados.",
+        "place-name": "Nome Completo / Empresa",
+        "place-phone": "Telefone / WhatsApp",
+        "place-mat-desc": "Descreva os itens a doar e se irá entregar presencialmente ou enviar por correio...",
+        "alert-pix": "Chave PIX (CNPJ 30.593.800/0001-24) copiada com sucesso!",
+        "alert-pix-err": "Erro ao copiar a chave: ",
+        "alert-thanks": "Obrigado pelo apoio! Sua solicitação foi enviada."
+      },
+      en: {
+        "nav-about": "About Us",
+        "nav-projects": "Projects",
+        "nav-gallery": "Gallery",
+        "nav-donate": "How to Help",
+        "nav-partners": "Partners",
+        "nav-contact": "Contact",
+        "hero-badge": "✨ Official Tax ID: 30.593.800/0001-24",
+        "hero-title": "Transforming lives in Itaboraí",
+        "hero-subtitle": "Support Associação Pestalozzi de Itaboraí with clinical care, rehabilitation, and social inclusion for people with disabilities and their families.",
+        "hero-btn": "Make a Donation",
+        "about-title": "About Our Organization",
+        "about-subtitle": "Founded in 1982, dedicated to inclusion and assistance with excellence and affection.",
+        "mission-title": "Our Mission",
+        "mission-desc": "Promote autonomy, social inclusion, and life quality for people with disabilities and vulnerable families.",
+        "values-title": "Our Values",
+        "values-desc": "Respect, transparency, affection, social commitment, and continuous human development.",
+        "impact-title": "Our Impact",
+        "impact-desc": "Hundreds of annual consultations in health, inclusive education, workshops, and family support.",
+        "projects-title": "Our Projects",
+        "projects-subtitle": "Key areas where your donation creates real life transformation.",
+        "p1-title": "Multidisciplinary Care",
+        "p1-desc": "Speech therapy, physiotherapy, psychology, and occupational therapy for motor and cognitive growth.",
+        "p2-title": "Inclusive Workshops & Movement",
+        "p2-desc": "Physical activities, pedagogical training, and artistic expression for youth and adults.",
+        "p3-title": "Family and Community",
+        "p3-desc": "Social support, welcoming expectant mothers, mothers' atelier, and continuous supply distribution.",
+        "gallery-title": "Our Impact in Pictures",
+        "gallery-subtitle": "Click on a category to explore the complete photo gallery.",
+        "badge-photos": "📸 10 Fotos",
+        "badge-peda-photos": "📸 18 Fotos",
+        "badge-fam-photos": "📸 10 Fotos",
+        "badge-vol-photos": "📸 6 Fotos",
+        "cap-1": "Physiotherapy, Sports & Inclusive Dance",
+        "cap-2": "Pedagogical & Psychomotor Workshops",
+        "cap-3": "Family and Community",
+        "cap-4": "Community Integration & Volunteering",
+        "modal-fisioterapia-title": "Physiotherapy, Sports & Inclusive Dance",
+        "modal-fisioterapia-desc": "Records of physical rehabilitation sessions, motor coordination, rhythmic activities, and group movement.",
+        "modal-pedagogie-title": "Pedagogical & Psychomotor Workshops",
+        "modal-pedagogie-desc": "Educational activities, artistic practices, concentration dynamics, and cognitive development.",
+        "modal-familie-title": "Family and Community",
+        "modal-familie-desc": "Family support meetings, social integration, lectures, and community dynamics.",
+        "modal-vol-title": "Community Integration & Volunteering",
+        "modal-vol-desc": "Outdoor activities, inclusion dynamics, voluntary support, and group connection.",
+        "donate-title": "How to Help",
+        "donate-subtitle": "Choose the most convenient way to make your secure contribution.",
+        "tab-pix": "📱 PIX (Brazil Only)",
+        "tab-card": "💳 Card / International",
+        "tab-material": "📦 Supplies Donation",
+        "pix-heading": "Direct Donation via PIX",
+        "pix-desc": "Instant and 100% fee-free directly to the Association's official account.",
+        "pix-label": "Official CNPJ Key:",
+        "pix-copy-btn": "Copy PIX Key",
+        "qr-hint": "Scan with your banking app",
+        "card-heading": "Credit Card / International",
+        "card-desc": "Fill out our quick donation form with your preferred amount to receive the secure payment link.",
+        "card-btn-form": "📋 Fill Donation Form",
+        "mat-heading": "In-Kind & Supply Donations",
+        "mat-desc": "We accept non-perishable food, cleaning supplies, school materials, and equipment.",
+        "wishlist-title": "📦 Most Urgent Needs:",
+        "wish-1": "Non-perishable food for grocery baskets",
+        "wish-2": "Cleaning and personal hygiene products",
+        "wish-3": "School materials, papers, and atelier fabrics",
+        "wish-4": "Wheelchairs and mobility support devices",
+        "delivery-title": "Delivery Methods:",
+        "del1-title": "In-Person Drop-off at Facility",
+        "del1-desc": "You can bring your donation directly to our headquarters.",
+        "del1-time-title": "⏰ Receiving Hours:",
+        "del1-hours": "Monday to Friday, from 8:00 AM to 5:00 PM",
+        "del2-title": "Send via Postal Service (Correios)",
+        "del2-desc": "Send your package via post using the official address details:",
+        "form-mat-title": "Notify Supply Donation",
+        "mat-submit": "Send Notification",
+        "partners-title": "Partners & Supporters",
+        "partners-subtitle": "Institutions, corporations, and public bodies empowering our cause.",
+        "partner-corp": "Corporate Partner",
+        "partner-intl": "International Social Impact Partner",
+        "partner-gov-rj": "Cultural & Institutional Support",
+        "partner-council": "Social Rights Council",
+        "footer-legal": "Private Non-Profit for Social Assistance & Rehabilitation.",
+        "footer-contact-title": "Contact Channels",
+        "footer-location-title": "Facility Location",
+        "footer-rights": "All rights reserved.",
+        "place-name": "Full Name / Company",
+        "place-phone": "Phone / WhatsApp",
+        "place-mat-desc": "Describe items to donate and whether you will drop off or ship via postal...",
+        "alert-pix": "PIX Key (CNPJ 30.593.800/0001-24) copied successfully!",
+        "alert-pix-err": "Error copying PIX key: ",
+        "alert-thanks": "Thank you for your support! Notification received."
+      },
+      es: {
+        "nav-about": "Sobre Nosotros",
+        "nav-projects": "Proyectos",
+        "nav-gallery": "Galería",
+        "nav-donate": "Cómo Ayudar",
+        "nav-partners": "Aliados",
+        "nav-contact": "Contacto",
+        "hero-badge": "✨ CNPJ Oficial: 30.593.800/0001-24",
+        "hero-title": "Transformando vidas em Itaboraí",
+        "hero-subtitle": "Apoye a la Associação Pestalozzi de Itaboraí en la atención clínica, rehabilitación e inclusión social.",
+        "hero-btn": "Hacer una Donación",
+        "about-title": "Sobre Nuestra Institución",
+        "about-subtitle": "Fundada en 1982, dedicada a la inclusión y asistencia con excelencia y cariño.",
+        "mission-title": "Nuestra Misión",
+        "mission-desc": "Promover la autonomía, inclusión social y calidad de vida de personas con discapacidad y familias vulnerables.",
+        "values-title": "Nuestros Valores",
+        "values-desc": "Respeto, transparencia, afecto, compromiso social y desarrollo humano continuo.",
+        "impact-title": "Nosso Impacto",
+        "impact-desc": "Cientos de atenciones anuales en salud, educación inclusiva, talleres y apoyo familiar.",
+        "projects-title": "Nuestros Proyectos",
+        "projects-subtitle": "Áreas donde su contribución genera impacto directo y positivo.",
+        "p1-title": "Atención Multidisciplinaria",
+        "p1-desc": "Fonoaudiología, fisioterapia, psicología e terapia ocupacional para desarrollo motor e cognitivo.",
+        "p2-title": "Talleres Inclusivos & Movimiento",
+        "p2-desc": "Actividades corporales, capacitación pedagógica y expresión artística para jóvenes y adultos.",
+        "p3-title": "Familia y Comunidad",
+        "p3-desc": "Acompañamiento social, acogida de gestantes, taller de madres y entrega continua de insumos.",
+        "gallery-title": "Nuestro Impacto en Imágenes",
+        "gallery-subtitle": "Haga clic en una categoría para abrir la galería completa de fotos.",
+        "badge-photos": "📸 10 Fotos",
+        "badge-peda-photos": "📸 18 Fotos",
+        "badge-fam-photos": "📸 10 Fotos",
+        "badge-vol-photos": "📸 6 Fotos",
+        "cap-1": "Fisioterapia, Deporte & Danza Inclusiva",
+        "cap-2": "Talleres Pedagógicos & Psicomotricidad",
+        "cap-3": "Familia y Comunidad",
+        "cap-4": "Integración Comunitaria y Voluntariado",
+        "modal-fisioterapia-title": "Fisioterapia, Deporte & Danza Inclusiva",
+        "modal-fisioterapia-desc": "Registros de las sesiones de rehabilitación física, coordinación motora, actividades rítmicas y movimiento grupal.",
+        "modal-pedagogie-title": "Talleres Pedagógicos & Psicomotricidad",
+        "modal-pedagogie-desc": "Actividades educativas, artísticas, dinámicas de concentración y desarrollo cognitivo.",
+        "modal-familie-title": "Familia y Comunidad",
+        "modal-familie-desc": "Encuentros de apoyo familiar, integración social, charlas y dinámicas comunitarias.",
+        "modal-vol-title": "Integración Comunitaria y Voluntariado",
+        "modal-vol-desc": "Actividades al aire libre, dinámicas de inclusión, apoyo voluntario y momentos compartidos.",
+        "donate-title": "Cómo Ayudar",
+        "donate-subtitle": "Elija la forma más conveniente para su donación segura.",
+        "tab-pix": "📱 PIX (Solo Brasil)",
+        "tab-card": "💳 Tarjeta / Internacional",
+        "tab-material": "📦 Donación Material",
+        "pix-heading": "Donación Directa vía PIX",
+        "pix-desc": "Rápido y 100% sin comisiones directo a la cuenta oficial de la institución.",
+        "pix-label": "Clave Oficial (CNPJ):",
+        "pix-copy-btn": "Copiar Clave PIX",
+        "qr-hint": "Apunta con la app de tu banco",
+        "card-heading": "Tarjeta de Crédito / Internacional",
+        "card-desc": "Complete nuestro breve formulario con su donación preferida para recibir el enlace de pago seguro.",
+        "card-btn-form": "📋 Llenar Formulario de Donación",
+        "mat-heading": "Donación de Materiales e Insumos",
+        "mat-desc": "Aceptamos alimentos no perecederos, insumos de limpieza, escolares y equipos de apoyo.",
+        "wishlist-title": "📦 Principales Necesidades:",
+        "wish-1": "Alimentos no perecederos para canastas básicas",
+        "wish-2": "Productos de limpieza e higiene personal",
+        "wish-3": "Útiles escolares, papelería y telas para el taller",
+        "wish-4": "Sillas de ruedas y materiales terapéuticos",
+        "delivery-title": "Formas de Entrega:",
+        "del1-title": "Entrega Presencial en la Sede",
+        "del1-desc": "Puede traer su donación personalmente a nuestra institución.",
+        "del1-time-title": "⏰ Horario de Recepción:",
+        "del1-hours": "Lunes a Viernes, de 08h a 17h",
+        "del2-title": "Envío por Correos",
+        "del2-desc": "Envíe su paquete por correo postal a la dirección oficial:",
+        "form-mat-title": "Notificar Donación Material",
+        "mat-submit": "Enviar Notificación",
+        "partners-title": "Aliados y Colaboradores",
+        "partners-subtitle": "Instituciones, empresas y organismos públicos que apoyan nuestro trabajo.",
+        "partner-corp": "Socio Corporativo",
+        "partner-intl": "Socio Internacional de Impacto Social",
+        "partner-gov-rj": "Apoyo Cultural e Institucional",
+        "partner-council": "Consejo de Derechos Sociales",
+        "footer-legal": "Asociación Privada de Asistencia Social e Rehabilitación.",
+        "footer-contact-title": "Canales de Contacto",
+        "footer-location-title": "Dirección de la Sede",
+        "footer-rights": "Todos os derechos reservados.",
+        "place-name": "Nombre Completo / Empresa",
+        "place-phone": "Teléfono / WhatsApp",
+        "place-mat-desc": "Describa los artículos a donar y si entregará presencialmente o por correo...",
+        "alert-pix": "¡Clave PIX (CNPJ 30.593.800/0001-24) copiada con éxito!",
+        "alert-pix-err": "Error al copiar la clave: ",
+        "alert-thanks": "¡Gracias por su apoyo! Notificación enviada."
+      },
+      ro: {
+        "nav-about": "Despre Noi",
+        "nav-projects": "Proiecte",
+        "nav-gallery": "Galerie",
+        "nav-donate": "Cum să Ajuți",
+        "nav-partners": "Parteneri",
+        "nav-contact": "Contact",
+        "hero-badge": "✨ CNPJ Oficial: 30.593.800/0001-24",
+        "hero-title": "Transformăm vieți în Itaboraí",
+        "hero-subtitle": "Susține Asociația Pestalozzi din Itaboraí în oferirea de îngrijire clinică, reabilitare și incluziune socială pentru persoanele cu dizabilități și familiile lor.",
+        "hero-btn": "Fă o Donație",
+        "about-title": "Despre Instituția Noastră",
+        "about-subtitle": "Fondată în 1982, dedicată incluziunii și asistenței cu profesionalism și căldură.",
+        "mission-title": "Misiunea Noastră",
+        "mission-desc": "Promovarea autonomiei, incluziunii sociale și calității vieții pentru persoanele cu dizabilități și familiile vulnerabile.",
+        "values-title": "Valorile Noastre",
+        "values-desc": "Respect, transparență, afecțiune, angajament social și dedicare continuă pentru dezvoltarea umană integrată.",
+        "impact-title": "Impactul Nostru",
+        "impact-desc": "Sute de sesiuni anuale în sănătate, educație incluzivă, ateliere productive și sprijin continuu pentru familii.",
+        "projects-title": "Proiectele Noastre",
+        "projects-subtitle": "Domenii cheie în care fiecare contribuție aduce o schimbare reală.",
+        "p1-title": "Îngrijire Multidisciplinară",
+        "p1-desc": "Logopedie, kinetoterapie, psihologie și terapie ocupațională pentru dezvoltare motorie și cognitivă.",
+        "p2-title": "Ateliere Incluzive & Mișcare",
+        "p2-desc": "Activități corporale, formare pedagogică și expresie artistică pentru tineri și adulți.",
+        "p3-title": "Familie și Comunitate",
+        "p3-desc": "Asistență socială, primirea viitoarelor mame, atelierul mamelor și distribuire de ajutoare de bază.",
+        "gallery-title": "Impactul Nostru în Imagini",
+        "gallery-subtitle": "Apasă pe o categorie pentru a deschide albumul foto complet.",
+        "badge-photos": "📸 10 Poze",
+        "badge-peda-photos": "📸 18 Poze",
+        "badge-fam-photos": "📸 10 Poze",
+        "badge-vol-photos": "📸 6 Poze",
+        "cap-1": "Kinetoterapie, Sport & Dans Incluziv",
+        "cap-2": "Ateliere Pedagogice & Psihomotricitate",
+        "cap-3": "Familie și Comunitate",
+        "cap-4": "Integrare Comunitară și Voluntariat",
+        "modal-fisioterapia-title": "Kinetoterapie, Sport & Dans Incluziv",
+        "modal-fisioterapia-desc": "Imagini din cadrul sesiunilor de reabilitare fizică, coordonare motorie, dans și exerciții în grup.",
+        "modal-pedagogie-title": "Ateliere Pedagogice & Psihomotricitate",
+        "modal-pedagogie-desc": "Activități educative, creație artistică, exerciții de concentrare și dezvoltare cognitivă.",
+        "modal-familie-title": "Familie și Comunitate",
+        "modal-familie-desc": "Întâlniri de sprijin familial, integrare socială, ateliere și activități comunitare.",
+        "modal-vol-title": "Integrare Comunitară și Voluntariat",
+        "modal-vol-desc": "Activități în aer liber, jocuri incluzive, implicare voluntară și momente de echipă.",
+        "donate-title": "Cum să Ajuți",
+        "donate-subtitle": "Alege cea mai comodă modalitate pentru a face o donație sigură.",
+        "tab-pix": "📱 PIX (Doar Brazilia)",
+        "tab-card": "💳 Card / Internațional",
+        "tab-material": "📦 Donații Materiale",
+        "pix-heading": "Donație Directă prin PIX",
+        "pix-desc": "Cea mai rapidă modalitate, 100% fără comisioane, direct în contul Asociației.",
+        "pix-label": "Cheie Oficială (CNPJ):",
+        "pix-copy-btn": "Copiază Cheia PIX",
+        "qr-hint": "Scanează cu aplicația băncii tale",
+        "card-heading": "Card Bancar / Internațional",
+        "card-desc": "Completează formularul rapid de donație pentru a primi pe email sau WhatsApp linkul direct și securizat de plată.",
+        "card-btn-form": "📋 Completează Formularul de Donație",
+        "mat-heading": "Donații de Bunuri și Materiale",
+        "mat-desc": "Acceptăm alimente neperisabile, produse de curățenie, rechizite și echipamente.",
+        "wishlist-title": "📦 Nevoi Urgente:",
+        "wish-1": "Alimente neperisabile pentru pachete sociale",
+        "wish-2": "Produse de igienă și curățenie",
+        "wish-3": "Rechizite școlare, hârtie și materiale textile",
+        "wish-4": "Scaune rulante și echipamente de mobilitate",
+        "delivery-title": "Modalități de Livrare:",
+        "del1-title": "Predare Personală la Sediu",
+        "del1-desc": "Puteți aduce donațiile direct la sediul asociației noastre.",
+        "del1-time-title": "⏰ Program de Primire:",
+        "del1-hours": "Luni până Vineri, între orele 08:00 și 17:00",
+        "del2-title": "Trimitere prin Poștă (Correios)",
+        "del2-desc": "Trimiteți coletul prin poștă către datele oficiale ale instituției:",
+        "form-mat-title": "Notificare Donație Materială",
+        "mat-submit": "Trimite Notificarea",
+        "partners-title": "Parteneri și Susținători",
+        "partners-subtitle": "Instituții, companii și autorități publice care susțin cauza noastră.",
+        "partner-corp": "Partener Corporativ",
+        "partner-intl": "Partener Internațional de Impact Social",
+        "partner-gov-rj": "Sprijin Cultural și Instituțional",
+        "partner-council": "Consiliul de Asistență Socială",
+        "footer-legal": "Asociație Privată de Asistență Socială și Reabilitare.",
+        "footer-contact-title": "Canale de Contact",
+        "footer-location-title": "Adresa Sediului",
+        "footer-rights": "Toate drepturile rezervate.",
+        "place-name": "Nume Complet / Companie",
+        "place-phone": "Telefon / WhatsApp",
+        "place-mat-desc": "Descrie bunurile donate și menționează dacă le vei aduce personal sau prin poștă...",
+        "alert-pix": "Cheia PIX (CNPJ 30.593.800/0001-24) a fost copiată cu succes!",
+        "alert-pix-err": "Eroare la copierea cheii: ",
+        "alert-thanks": "Vă mulțumim pentru susținere! Notificarea a fost trimisă."
+      }
+    };
+
+    var currentLang = 'pt';
+
+    function changeLanguage(lang) {
+      currentLang = lang;
+      var dict = translations[lang];
+      if (!dict) return;
+
+      var elements = document.querySelectorAll('[data-i18n]');
+      for (var i = 0; i < elements.length; i++) {
+        var key = elements[i].getAttribute('data-i18n');
+        if (dict[key]) {
+          elements[i].innerText = dict[key];
+        }
+      }
+
+      var matName = document.getElementById('mat-name');
+      var matPhone = document.getElementById('mat-phone');
+      var matDesc = document.getElementById('mat-desc');
+
+      if (matName && dict['place-name']) matName.placeholder = dict['place-name'];
+      if (matPhone && dict['place-phone']) matPhone.placeholder = dict['place-phone'];
+      if (matDesc && dict['place-mat-desc']) matDesc.placeholder = dict['place-mat-desc'];
+    }
+
+    function openModal(modalId) {
+      var modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeModal(modalId) {
+      var modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    function closeModalOnOutsideClick(event, modalId) {
+      if (event.target && event.target.classList.contains('modal-overlay')) {
+        closeModal(modalId);
+      }
+    }
+
+    function openLightboxByGallery(galleryName, index) {
+      if (!galleryData[galleryName]) return;
+      currentGallery = galleryName;
+      currentImageIndex = index;
+      updateLightboxImage();
+      
+      var lightbox = document.getElementById('lightboxModal');
+      if (lightbox) {
+        lightbox.classList.add('active');
+      }
+    }
+
+    function updateLightboxImage() {
+      var lightboxImg = document.getElementById('lightboxImg');
+      if (lightboxImg && galleryData[currentGallery]) {
+        lightboxImg.src = galleryData[currentGallery][currentImageIndex];
+      }
+    }
+
+    function nextImage() {
+      var list = galleryData[currentGallery];
+      if (!list) return;
+      currentImageIndex = (currentImageIndex + 1) % list.length;
+      updateLightboxImage();
+    }
+
+    function prevImage() {
+      var list = galleryData[currentGallery];
+      if (!list) return;
+      currentImageIndex = (currentImageIndex - 1 + list.length) % list.length;
+      updateLightboxImage();
+    }
+
+    function closeLightbox() {
+      var lightbox = document.getElementById('lightboxModal');
+      if (lightbox) {
+        lightbox.classList.remove('active');
+      }
+    }
+
+    function closeLightboxOnOutsideClick(event) {
+      if (event.target && event.target.classList.contains('lightbox-overlay')) {
+        closeLightbox();
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      var lightbox = document.getElementById('lightboxModal');
+      var isLightboxActive = lightbox && lightbox.classList.contains('active');
+
+      if (isLightboxActive) {
+        if (e.key === 'ArrowRight') {
+          nextImage();
+        } else if (e.key === 'ArrowLeft') {
+          prevImage();
+        } else if (e.key === 'Escape') {
+          closeLightbox();
+        }
+        return;
+      }
+
+      if (e.key === 'Escape') {
+        var modals = document.querySelectorAll('.modal-overlay');
+        for (var i = 0; i < modals.length; i++) {
+          modals[i].classList.remove('active');
+        }
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    function openTab(evt, tabId) {
+      var contents = document.querySelectorAll('.tab-content');
+      var buttons = document.querySelectorAll('.tab-btn');
+
+      for (var i = 0; i < contents.length; i++) {
+        contents[i].classList.remove('active');
+      }
+      for (var j = 0; j < buttons.length; j++) {
+        buttons[j].classList.remove('active');
+      }
+
+      var targetTab = document.getElementById(tabId);
+      if (targetTab) targetTab.classList.add('active');
+      if (evt && evt.currentTarget) evt.currentTarget.classList.add('active');
+    }
+
+    function copyPix() {
+      var pixKeyElem = document.getElementById('pixKey');
+      if (!pixKeyElem) return;
+      var pixKey = pixKeyElem.innerText.trim();
+      var dict = translations[currentLang];
+      navigator.clipboard.writeText(pixKey).then(function() {
+        alert(dict['alert-pix']);
+      }).catch(function() {
+        alert(dict['alert-pix-err'] + pixKey);
+      });
+    }
+
+    function handleFormSubmit(event, type) {
+      event.preventDefault();
+      var dict = translations[currentLang];
+      alert(dict['alert-thanks']);
+      event.target.reset();
+    }
+  </script>
+</body>
+</html>
